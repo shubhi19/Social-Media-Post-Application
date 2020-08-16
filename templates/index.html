@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Capstone Application</title>
+   </head>
+   <body bgcolor="teal">
+      <font face="Bradley Hand ITC" color="white" size="5">Capstone Social Media Application</font>
+      <br>
+      <br>
+      <font face="Comic Sans MS" color="yellow" size="2"> Post your message here ...</font>
+      <br>
+      <br>
+      <form action="/" method="post">
+         <input name="name" placeholder="Name">
+         <input name="post" placeholder="Post Content">
+         <input type="submit" value="Submit">
+      </form>
+      <br>
+      <br>
+      <font face="Comic Sans MS" color="yellow" size="2"> Submitted posts ...</font>
+      <br>
+      <br>
+      {% for post in posts %}
+      <div><font face="Aerial" color="white" size="1">{{ post[1] + '  :  ' + post[2] }}</font></div>
+      <br>
+      {% endfor %}
+   </body>
+</html>
