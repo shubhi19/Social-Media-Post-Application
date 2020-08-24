@@ -18,7 +18,7 @@ docker {
    }
     stage('Build Docker') {
       steps {
-        sh 'make build'
+        sh 'docker build --build-arg APP_PORT=5000 --tag=shubhi19/k8-flask-api .'
       }
     }
     stage('Login to dockerhub') {
