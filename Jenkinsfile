@@ -1,17 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Lint Files') {
+    stage('Lint Dockerfile') {
       agent {
-        docker {
+docker {
             image 'hadolint/hadolint:latest-debian'
         }
     }
       steps {
          sh 'hadolint Dockerfile'
-         sh 'tidy -q -e templates/index.html'
       }
     }
+    stage('Lint HTML'){
+        steps{
+            sh 'tidy -q -e templates/index.html'
+        }
+   }
     stage('Build Docker') {
       steps {
         sh 'make build'
