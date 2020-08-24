@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <title>Capstone Application</title>
 </head>
-<style>
-body {background-color: powderblue;}
-h1   {color: blue;}
-h2   {color: white;}
-p    {color: red;}
 
-</style>
 <body bgcolor="teal">
 <h1>Capstone Social Media Application</h1>
 <br>
@@ -29,7 +23,7 @@ p    {color: red;}
 <br>
 <br>
 {% for post in posts %}
-<div><font color="white" face="Aerial" size="1">{{ post[1] + ' : ' + post[2] }}</font></div>
+<div>{{ post[1] + ' : ' + post[2] }}</div>
 <br>
 {% endfor %}
 </body>
