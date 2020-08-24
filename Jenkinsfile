@@ -4,7 +4,7 @@ pipeline {
     stage('Lint') {
       steps {
         // sh 'make lint'
-        hadolint Dockerfile
+        sh 'hadolint Dockerfile'
 	      //pylint3 --disable=R,C,W1203 app.py
       }
     }
