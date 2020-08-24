@@ -8,8 +8,8 @@ pipeline {
         }
     }
       steps {
-        //sh 'make lint'
          sh 'hadolint Dockerfile'
+         sh 'pylint3 --disable=R,C,W1203 app.py'
       }
     }
     stage('Build Docker') {
