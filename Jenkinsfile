@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Lint') {
       steps {
-        sh 'make lint'
+        //sh 'make lint'
+        sh '/usr/bin/hlint Dockerfile'
       }
     }
     stage('Build Docker') {
