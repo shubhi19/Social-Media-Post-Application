@@ -9,7 +9,7 @@ pipeline {
     }
       steps {
          sh 'hadolint Dockerfile'
-         sh '/home/ubuntu/.local/bin/pylint --disable=R,C,W1203 app.py'
+         sh 'tidy -q -e templates/index.html'
       }
     }
     stage('Build Docker') {
