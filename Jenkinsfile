@@ -25,9 +25,9 @@ docker {
       steps {
         withCredentials([usernamePassword(credentialsId: 'docker-pwd', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
 	     	sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}" 
-	     	sh "sudo docker build -t shubhi19/k8-flask-api ."
+	     	sh "docker build -t shubhi19/k8-flask-api ."
 	     	//sh "sudo docker tag ${registry2} ${registry2}"
-	     	sh "sudo docker push shubhi19/k8-flask-api"
+	     	sh "docker push shubhi19/k8-flask-api"
 	}
       }
     }
