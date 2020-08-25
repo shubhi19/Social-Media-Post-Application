@@ -24,7 +24,7 @@ docker {
     stage('Login to dockerhub') {
       steps {
         withCredentials([usernameColonPassword(credentialsId: 'docker-pwd', variable: 'dockerhubpwd')]) {
-          sh 'docker login -u shubhi19 -p ${dockerhubpwd}'
+          sh 'docker login -u shubhi19 -p ${dockerhubpwd} --password-stdin'
         }
       }
     }
