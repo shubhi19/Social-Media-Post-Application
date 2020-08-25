@@ -28,6 +28,7 @@ docker {
        // }
         withCredentials([usernamePassword(credentialsId: 'docker-pwd', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
 	     	sh "sudo docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}" 
+	}
       }
     }
     stage('Upload Image') {
