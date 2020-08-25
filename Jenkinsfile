@@ -23,7 +23,7 @@ docker {
     }
     stage('Login to dockerhub') {
       steps {
-        withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerhubpwd')]) {
+        withCredentials([usernameColonPassword(credentialsId: 'docker-pwd', variable: 'dockerhubpwd')]) {
           sh 'docker login -u shubhi19 -p ${dockerhubpwd}'
         }
       }
