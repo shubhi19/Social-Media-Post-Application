@@ -23,9 +23,11 @@ docker {
     }
     stage('Login to dockerhub') {
       steps {
-        withCredentials([usernameColonPassword(credentialsId: 'docker-pwd', variable: 'dockerhubpwd')]) {
-          sh 'docker login -u shubhi19 -p ${dockerhubpwd} --password-stdin'
-        }
+       // withCredentials([usernameColonPassword(credentialsId: 'docker-pwd', variable: 'dockerhubpwd')]) {
+       //   sh 'docker login -u shubhi19 -p ${dockerhubpwd} --password-stdin'
+       // }
+        withCredentials([usernamePassword(credentialsId: 'docker-pwd', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+	     	sh "sudo docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}" 
       }
     }
     stage('Upload Image') {
