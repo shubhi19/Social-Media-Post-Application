@@ -1,2 +1,1 @@
-# capstone
-capstone project
+# Social Media Post Application
