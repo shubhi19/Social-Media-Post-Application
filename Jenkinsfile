@@ -27,7 +27,7 @@ docker {
        //   sh 'docker login -u shubhi19 -p ${dockerhubpwd} --password-stdin'
        // }
         withCredentials([usernamePassword(credentialsId: 'docker-pwd', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-	     	sh "sudo docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}" 
+	     	sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}" 
 	}
       }
     }
